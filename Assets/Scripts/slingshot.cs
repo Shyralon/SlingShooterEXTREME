@@ -20,4 +20,23 @@ public class slingshot : MonoBehaviour {
 		print ("exitstuff");
 		launchpoint.SetActive (false);
 	}
-}
+
+	//void onMouseDown
+
+	/*void Update(){
+		if (!aimingmode)
+			return;
+
+		Vector3 mousePos2D = Input.mousePoisition;
+		mousePos2D.z = -Camera.main.transform.position.z;
+		Vector3 mousePos3D = Camera.main.ScreenToWorldPoint (mousePos2D);
+
+		Vector3 mouseDelta = mousePos3D -launchPos;
+
+		float maxMagnitude = this.Getcomponent<SphereCollider>().radius;
+		mouseDelta = Vector3.ClampMagnitude(mouseDelta
+
+		FollowCamera.S.poi = projectile;
+
+} */
+
