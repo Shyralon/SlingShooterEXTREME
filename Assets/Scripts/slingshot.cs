@@ -39,4 +39,4 @@ public class slingshot : MonoBehaviour {
 		FollowCamera.S.poi = projectile;
 
 } */
-
+	

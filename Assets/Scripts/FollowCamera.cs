@@ -7,6 +7,7 @@ public class FollowCamera : MonoBehaviour {
 	public float easing = 0.05;
 	private GameObject poi;
 	private float  camZ;
+	Vector2 minXY;
 
 	void Awake() {
 		S = this;
@@ -21,8 +22,11 @@ public class FollowCamera : MonoBehaviour {
 		}
 
 		Vector3 destination = Vector3.Lerp (this.transform.position, poi.transform.position, easing);
+		destination.x = Mathf.Max (minXY.x, destination.x);
+		destination.y = Mathf.Max (minXY.y, destination.y);
 		destination.z = camZ;
 		transform.position = destination;
+		this.GetComponent<Camera>().orthographicSize = 10 + destination.y;
 	}
 
 }
