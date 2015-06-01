@@ -15,10 +15,22 @@ public class FollowCamera : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
+		Vector3 destination;
 		//check if poi is empty;
 
 		if (poi == null) {
-			return;
+			destination.Vector3.zero
+		} else {
+			//else if the poi exists
+			//get its position
+			destination = poi.transform.position;
+			if(poi.tag == "projectile"){
+			//check if poi is a projectile
+			if(poi.GetComponent<Rigidbody>().IsSleeping()){
+					poi=null;
+					return;
+			//check if resting (sleeping)
+			//set it to null as default value
 		}
 
 		Vector3 destination = Vector3.Lerp (this.transform.position, poi.transform.position, easing);
