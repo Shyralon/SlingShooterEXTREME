@@ -60,14 +60,14 @@ public class CloudCrafter : MonoBehaviour {
 		for (int i=0; i<NumberOfClouds;i++){
 			int prefabNum=Random.Range (0, cloudPrefabs.Length-1);
 			cloud =Instantiate(cloudPrefabs[prefabNum]);
-			Vector3 cPos=Vector2 3.zero;
+			Vector3 cPos=Vector3.zero;
 			cPos.x = Random.Range(PosMin.x, PosMax.x);
 			// duplicate with y
 			float scaleU = Random.value;
 			float scaleVal = Mathf.Lerp (ScaleMin, ScaleMax, scaleU);
 			cPos.y = Mathf.Lerp(PosMinY.y, cPos.y,scaleU);
 
-			cPos.z = 100-90*scaleU
+			cPos.z = 100-90*scaleU;
 
 				//	cloud.Transform.position= cPos;
 				//	cloud.transform.localScale=Vector3.one*scaleVal;
@@ -92,3 +92,4 @@ public class CloudCrafter : MonoBehaviour {
 			}
 			cloud.transform.position=cPos;
 	}
+}

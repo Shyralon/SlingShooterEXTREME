@@ -19,7 +19,7 @@ public class FollowCamera : MonoBehaviour {
 		//check if poi is empty;
 
 		if (poi == null) {
-			destination.Vector3.zero
+			destination=Vector3.zero;
 		} else {
 			//else if the poi exists
 			//get its position
@@ -31,9 +31,11 @@ public class FollowCamera : MonoBehaviour {
 					return;
 			//check if resting (sleeping)
 			//set it to null as default value
+				}
+			}
 		}
 
-		Vector3 destination = Vector3.Lerp (this.transform.position, poi.transform.position, easing);
+		destination = Vector3.Lerp (this.transform.position, poi.transform.position, easing);
 		destination.x = Mathf.Max (minXY.x, destination.x);
 		destination.y = Mathf.Max (minXY.y, destination.y);
 		destination.z = camZ;
